@@ -1,0 +1,86 @@
+<html>
+<head>
+    <html lang="pl"></html>
+    <title>Tabela HTML z obrazkami i tekstem</title>
+    <style>
+        table {
+            width: 1000;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+            vertical-align: middle;
+        }
+        img {
+            max-width: 100%;
+            height: 250;
+        }
+    </style>
+</head>
+<body>
+    <body style="background-color: rgb(202, 110, 4);"></body>
+    <table align="center">
+        <tr>
+            <td rowspan="3">
+                <img src="https://www.olfaktoria.pl/uploads/images/artykuly/2014/09/16-najlepszych-filmow-na-jesienne-wieczory.jpg" width="400" height="400">
+            </td>
+            <td>
+                <a href="https://www.zwierzyniec.info.pl">Zwierzyniec</a>
+            </td>
+            <td rowspan="3">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSM2CYgSPlW2Za0E69bIqyuFC3Z1AbqrNwaiwJxATPkRf9anyegbvUU4_3623B6BuIeVyQ&usqp=CAU" width="400" height="400">
+            </td>
+        </tr>
+        <tr>
+            <td>
+               Mikołaj
+               Szpuga
+            </td>
+        </tr>
+            <td>
+                01.10.2023
+            </td>
+            <script>
+                // Funkcja do aktualizacji daty i godziny
+                function aktualizujDateIGodzine() {
+                    var teraz = new Date(); // Pobierz aktualną datę i godzinę
+                    var rok = teraz.getFullYear();
+                    var miesiac = teraz.getMonth() + 1; // Dodaj 1, ponieważ miesiące są numerowane od 0
+                    var dzien = teraz.getDate();
+                    var godzina = teraz.getHours();
+                    var minuta = teraz.getMinutes();
+                    var sekunda = teraz.getSeconds();
+        
+                    // Formatuj datę i godzinę, dodając zero przed jednocyfrowymi liczbami
+                    if (miesiac < 10) {
+                        miesiac = "0" + miesiac;
+                    }
+                    if (dzien < 10) {
+                        dzien = "0" + dzien;
+                    }
+                    if (godzina < 10) {
+                        godzina = "0" + godzina;
+                    }
+                    if (minuta < 10) {
+                        minuta = "0" + minuta;
+                    }
+                    if (sekunda < 10) {
+                        sekunda = "0" + sekunda;
+                    }
+        
+                    // Wyświetl datę i godzinę na stronie
+                    document.getElementById("czas").textContent = rok + "-" + miesiac + "-" + dzien + " " + godzina + ":" + minuta + ":" + sekunda;
+                }
+        
+                // Uruchom funkcję aktualizacji daty i godziny co sekundę
+                setInterval(aktualizujDateIGodzine, 1000);
+        
+                // Wywołaj funkcję aktualizacji daty i godziny, aby wyświetlić je od razu
+                aktualizujDateIGodzine();
+            </script>
+        </tr>
+    </table>
+</body>
+</html>
